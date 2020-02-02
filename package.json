@@ -1,8 +1,8 @@
 {
-  "name": "just-the-docs",
-  "version": "0.2.7",
-  "description": "A modern Jekyll theme for documentation",
-  "repository": "pmarsceill/just-the-docs",
+  "name": "just-the-docs remodel",
+  "version": "0.1",
+  "description": "remodel of just-the-docs theme (pmarsceill)",
+  "repository": "dsncp/just-the-docs",
   "license": "MIT",
   "bugs": "https://github.com/pmarsceill/just-the-docs/issues",
   "devDependencies": {

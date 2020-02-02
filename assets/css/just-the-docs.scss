@@ -33,6 +33,9 @@ $logo: "{{ site.logo | absolute_url }}";
 {% if site.color_scheme == "dark" %}
 @import "./color_schemes/dark.scss";
 {% endif %}
+{% if site.color_scheme == "custom" %}
+@import "./color_schemes/custom.scss";
+{% endif %}
 
 // Modules
 @import "./base";
