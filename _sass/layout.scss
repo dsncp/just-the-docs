@@ -19,7 +19,7 @@
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
-  background-color: $sidebar-color;
+  background-color: var(--sidebar-color);
 
   @include mq(md) {
     flex-wrap: nowrap;
@@ -82,13 +82,13 @@
   display: none;
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
-  background-color: $sidebar-color;
+  background-color:var(--sidebar-color);
 
   @include mq(md) {
     display: flex;
     justify-content: flex-end;
     height: $header-height;
-    background-color: $body-background-color;
+    background-color: var(--body-background-color);
     border-bottom: $border $border-color;
   }
 
@@ -144,7 +144,7 @@
   align-items: center;
   padding-top: $sp-3;
   padding-bottom: $sp-3;
-  color: $body-heading-color;
+  color: var(--body-heading-color);
   @include fs-6;
 
   @include mq(md) {
@@ -206,4 +206,9 @@ body {
     position: static;
     justify-self: end;
   }
+}
+
+.flex {
+  display:flex;
+  align-items: center;
 }

@@ -23,13 +23,14 @@
       position: absolute;
       margin-top: 0.3em;
       margin-left: -0.8em;
-      color: rgba($body-text-color, 0.3);
+      color: var(--body-text-color);
+      opacity: 0.3;
       content: "- ";
     }
 
     &.active {
       &::before {
-        color: $body-text-color;
+        color: var(--body-text-color);
       }
     }
   }
@@ -61,7 +62,7 @@
 
   &.active {
     font-weight: 600;
-    color: $body-heading-color;
+    color: var(--body-heading-color);
     text-decoration: none;
   }
 }

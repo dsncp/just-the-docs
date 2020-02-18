@@ -27,15 +27,13 @@ $logo: "{{ site.logo | absolute_url }}";
 @import "./custom/custom";
 
 //
-// Import custom color scheme scss
+// Import custom color schemes scss
 //
 
-{% if site.color_scheme == "dark" %}
+@import "./color_schemes/light.scss";
 @import "./color_schemes/dark.scss";
-{% endif %}
-{% if site.color_scheme == "custom" %}
-@import "./color_schemes/custom.scss";
-{% endif %}
+
+
 
 // Modules
 @import "./base";

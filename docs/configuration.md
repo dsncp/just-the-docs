@@ -70,16 +70,9 @@ footer_content: "Copyright &copy; 2017-2019 Patrick Marsceill. Distributed by an
 ## Color scheme
 
 ```yaml
-# Color scheme currently only supports "dark" / "custom" or nil (default)
+# default color scheme:  "dark" / "light" or nil (default)
 color_scheme: "dark"
 ```
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
-<script type="text/javascript" src="{{ "/assets/js/dark-mode-preview.js" | absolute_url }}"></script>
-
-<button class="btn js-toggle-dark-mode">Preview custom color scheme</button>
-
-<script type="text/javascript" src="{{ "/assets/js/custom-mode-preview.js" | absolute_url }}"></script>
 
 See [Customization]({{ site.baseurl }}{% link docs/customization.md %}) for more information.
 

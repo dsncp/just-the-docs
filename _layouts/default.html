@@ -40,6 +40,18 @@ layout: table_wrappers
             <div class="js-search-results search-results-wrap"></div>
           </div>
           {% endif %}
+          <div class="flex">
+            Theme: 
+            <label class="switch ">
+
+              <input type="checkbox" class="js-toggle-dark-mode" checked>
+              <span class="slider"></span>
+              <span class="text">
+              <span class="slider_on">light</span>
+              <span class="slider_off">dark</span>  
+              </span>
+
+          </div>
           {% if site.aux_links != nil %}
             <ul class="list-style-none text-small aux-nav">
               {% for link in site.aux_links %}
@@ -97,6 +109,6 @@ layout: table_wrappers
       </div>
     </div>
   </div>
-
+   <script type="text/javascript" src="{{ '/assets/js/switch-theme.js' | absolute_url }}"></script>
 </body>
 </html>
