@@ -33,10 +33,6 @@ search_tokenizer_separator: /[\s/]+/
 # Enable or disable heading anchors
 heading_anchors: true
 
-webserver_headers:
-  "Access-Control-Allow-Origin": "*"
-  "Server": "127.0.0.1"
-
 # Aux links for the upper right navigation
 aux_links:
   "Just the Docs on GitHub":
