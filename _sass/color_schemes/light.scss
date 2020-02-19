@@ -30,4 +30,5 @@ body {
     --code-background-color:        #{$code-background-color      }   ;
     --search-background-color:      #{$search-background-color    }   ;
     --table-background-color:       #{$table-background-color     }   ;
+    transition: all 0.5s ease-in-out;
 }
