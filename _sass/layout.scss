@@ -112,6 +112,7 @@
 
   @include mq(lg) {
     width: $nav-width;
+
   }
 }
 
@@ -205,8 +206,9 @@ body {
   left: 0;
   padding-top: $sp-4;
   padding-bottom: $sp-4;
-
+  display:flex;
   @include mq(md) {
+    display:block;
     position: static;
     justify-self: end;
   }
