@@ -1,7 +1,8 @@
 
 $body-background-color: $grey-lt-000;
-$sidebar-color: $grey-lt-000;
-$border-color: $grey-dk-200;
+
+$sidebar-color: $grey-lt-100;
+$border-color: $grey-lt-100;
 
 $body-text-color: $grey-dk-300;
 $body-heading-color: $grey-dk-300;
@@ -14,7 +15,7 @@ $base-button-color: $grey-dk-250;
 
 $code-background-color: $grey-lt-200;
 $search-background-color: $grey-dk-250;
-$table-background-color: $grey-dk-250;
+$table-background-color: $grey-lt-200;
 
 body {
     --body-background-color:        #{$body-background-color};
@@ -30,4 +31,5 @@ body {
     --code-background-color:        #{$code-background-color      }   ;
     --search-background-color:      #{$search-background-color    }   ;
     --table-background-color:       #{$table-background-color     }   ;
+    transition: all .5s ease-in-out;
 }

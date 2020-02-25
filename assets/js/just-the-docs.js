@@ -10,6 +10,7 @@ jtd.addEvent = function(el, type, handler) {
 jtd.removeEvent = function(el, type, handler) {
   if (el.detachEvent) el.detachEvent('on'+type, handler); else el.removeEventListener(type, handler);
 }
+ 
 jtd.onReady = function(ready) {
   // in case the document is already rendered
   if (document.readyState!='loading') ready();
@@ -45,6 +46,7 @@ function initNav() {
 // Site search
 
 function initSearch() {
+
   var request = new XMLHttpRequest();
   request.open('GET', '{{ "assets/js/search-data.json" | absolute_url }}', true);
 
@@ -90,7 +92,15 @@ function initSearch() {
 
   request.send();
 
+  function scrollTop () {
+    var searchResults = document.querySelector('.js-search-results');
+    if (searchResults.innerHTML !== '') {
+      const page = document.querySelector('.main-content-wrap');
+      page.scrollTop = 0
+    }
+  }
   function searchResults(index, data) {
+    
     var index = index;
     var docs = data;
     var searchInput = document.querySelector('.js-search-input');
@@ -102,6 +112,7 @@ function initSearch() {
     }
 
     jtd.addEvent(searchInput, 'keydown', function(e){
+      setTimeout(scrollTop, 250)
       switch (e.keyCode) {
         case 38: // arrow up
           e.preventDefault();
@@ -176,6 +187,7 @@ function initSearch() {
       });
 
       if (results.length > 0) {
+        // scroll to top
         searchResults.classList.add('active');
         var resultsList = document.createElement('ul');
         resultsList.classList.add('search-results-list');
@@ -267,6 +279,7 @@ function initSearch() {
               resultPreview.classList.add('search-result-preview');
               resultPreview.innerHTML = preview;
               resultLink.appendChild(resultPreview);
+ 
             }
           }
         }
@@ -274,10 +287,12 @@ function initSearch() {
     });
 
     jtd.addEvent(searchInput, 'blur', function(){
-      setTimeout(function(){ hideResults() }, 300);
+    //  setTimeout(function(){ hideResults() }, 300);
     });
   }
 }
+
+ 
 
 function pageFocus() {
   var mainContent = document.querySelector('.js-main-content');

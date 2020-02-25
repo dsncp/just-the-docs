@@ -23,7 +23,7 @@
       position: absolute;
       margin-top: 0.3em;
       margin-left: -0.8em;
-      color: var(--body-text-color);
+      color:  var(--body-text-color);
       opacity: 0.3;
       content: "- ";
     }
@@ -56,15 +56,43 @@
 }
 
 .navigation-list-link {
-  display: block;
+  display: inline-flex;
   padding-top: $sp-1;
   padding-bottom: $sp-1;
-
+  position:relative;
   &.active {
     font-weight: 600;
-    color: var(--body-heading-color);
+  //  color: var(--body-heading-color);
     text-decoration: none;
   }
+  &:before {
+    position:absolute;
+    left: -2em;
+    //bottom: 4px;
+    top:6px;
+    height: 1em;
+    width: 0;
+    background: $search-result-preview-color;
+    content: "";
+    transition: all .25s ease-in-out;
+  }
+  &:hover:before, &.active:before {
+    width: .5em;
+    background: $link-color !important;
+  }
+}
+a { position: relative;
+}
+
+a[href^="http://"]:hover:before, a[href^="https://"]:hover:before  {
+  content: "";
+  position: relative;
+  display:inline-block;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 100 100" style="fill:white;stroke:dodgerblue;stroke-width:10" >  <path  d="m43,35H5v60h60V57M45,5v10l10,10-30,30 20,20 30-30 10,10h10V5z"/>  </svg>') no-repeat;
 }
 
 // Small screen nav

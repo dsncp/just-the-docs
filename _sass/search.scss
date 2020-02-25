@@ -5,8 +5,17 @@
 .search {
   position: relative;
   z-index: 99;
-  flex-grow: 1;
-  height: 100%;
+  align-self:flex-end;
+  margin: .25em 1.5em;
+  flex: 1;
+  max-height: 1.5em;
+  border-radius: 5px;
+  display:flex;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+  //border: 1px solid $border-color;
+  
+  //flex-grow: 1;
+  //height: 100%;
   margin-bottom: $sp-3;
 
   @include mq(md) {
@@ -17,10 +26,13 @@
 .search-input-wrap {
   display: flex;
   height: 100%;
+  max-height: 1.5em;
+  flex: 1;
   padding: $sp-2;
-  background-color: $search-background-color;
-  border-radius: $border-radius;
+  background-color: var(--body-background-color);
+  border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all .5s ease-in-out;
 
   @include mq(md) {
     padding-top: 0;
@@ -28,7 +40,7 @@
     padding-bottom: 0;
     padding-left: 0;
     background-color: var(--body-background-color);
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: none;
   }
 }
@@ -38,12 +50,14 @@
   width: 100%;
   padding-top: $sp-1;
   padding-bottom: $sp-1;
-  background-color: $search-background-color;
+  background-color: var(--body-background-color);
+  max-height: 1.25em;
   border-top: 0;
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
   order: 2;
+  transition: all .5s ease-in-out;
   @include fs-4;
 
   &:focus {
@@ -56,7 +70,7 @@
   }
 
   @include mq(md) {
-    background-color: var(--body-background-color);
+    background-color: var(--sidebar-background-color);
     @include fs-3;
   }
 }
@@ -64,14 +78,16 @@
 .search-icon {
   align-self: center;
   margin-right: $sp-2;
+  margin-left: $sp-2;
   fill: $grey-dk-000;
   order: 1;
 }
 
 .search-results-wrap {
-  position: absolute;
+  //position: absolute;
+  flex: 1;
   z-index: 100;
-  display: none;
+  display: block;
   width: 100%;
   background: $search-background-color;
   border-radius: $border-radius;
@@ -82,12 +98,13 @@
   }
 
   @include mq(md) {
-    width: $search-results-width;
+ //   width: $search-results-width;
   }
 }
 
 .search-results-list {
   padding-left: 0;
+  width: 100%;
   margin-top: $sp-1;
   margin-bottom: $sp-1;
   list-style: none;

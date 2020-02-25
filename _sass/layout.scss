@@ -20,6 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   background-color: var(--sidebar-color);
+  transition: all .5s ease-in-out;
 
   @include mq(md) {
     flex-wrap: nowrap;
@@ -27,7 +28,8 @@
     width: $nav-width-md;
     height: 100%;
     flex-direction: column;
-    border-right: $border $border-color;
+    //border-right: $border $border-color;
+    box-shadow: 0 5px 1px 0 $border-color;
     align-items: flex-end;
   }
 
@@ -83,13 +85,14 @@
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
   background-color:var(--sidebar-color);
+  transition: all .5s ease-in-out;
 
   @include mq(md) {
     display: flex;
     justify-content: flex-end;
     height: $header-height;
     background-color: var(--body-background-color);
-    border-bottom: $border $border-color;
+    border-bottom: $border var(--border-color);
   }
 
   &.nav-open {
@@ -123,22 +126,23 @@
   }
 }
 
-.site-header {
+.site-header{
   display: flex;
   min-height: $header-height;
   align-items: center;
-
+  justify-content: center;
+  text-align: center;
   @include mq(md) {
     z-index: 101;
     height: $header-height;
     max-height: $header-height;
-    border-bottom: $border $border-color;
+ //   border-bottom: $border $border-color;
   }
 }
 
 .site-title {
   @include container;
-  flex-grow: 1;
+
   display: flex;
   height: 100%;
   align-items: center;
@@ -211,4 +215,5 @@ body {
 .flex {
   display:flex;
   align-items: center;
+  justify-content: center;
 }

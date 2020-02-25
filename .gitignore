@@ -2,5 +2,6 @@
 .bundle
 .sass-cache
 _site
+_search-data.json
 Gemfile.lock
 node_modules
